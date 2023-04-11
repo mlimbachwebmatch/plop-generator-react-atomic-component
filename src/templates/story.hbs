@@ -1,9 +1,17 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { {{ pascalCase name }} } from './{{ pascalCase name }}';
 
-const StorybookSettings = {
-  title: 'Design System/{{ type }}s/{{ name }}'
-};
+const meta: Meta<typeof Button> = {
+  title: 'Design System/{{ type }}s/{{ name }}',
+  component: {{ name }},
+  tags: ['autodocs'],
+  argTypes: {},
+}
 
-export default StorybookSettings;
+export default meta
+type Story = StoryObj<typeof {{ name }}>
 
-export const Basic{{ pascalCase name }} = () => <{{ pascalCase name }} />;
+export const Basic{{ name }}: Story = {
+  args: {},
+}
